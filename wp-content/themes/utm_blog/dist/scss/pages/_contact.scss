@@ -1,0 +1,135 @@
+.blog {
+  &__contact {
+    border-right: 1px solid #707070;
+    margin: 3rem 0;
+    @media only screen and (max-width: 1160px) {
+      border-right: unset;
+    }
+    &__details {
+      h2 {
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        font-family: 'poppins-bold';
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-bottom: 4rem;
+      }
+
+      ul li {
+        position: relative;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        word-break: break-all;
+
+        &::after {
+          content: ':';
+          position: absolute;
+          left: 8rem;
+        }
+        span {
+          position: absolute;
+          left: 11rem;
+        }
+      }
+    }
+
+    &__form {
+      margin-right: 3rem;
+      @media only screen and (max-width: 1160px) {
+        margin-right: unset;
+      }
+      h3 {
+        font-size: clamp(1.6rem, 5vw, 1.8rem);
+        font-family: 'poppins-bold';
+        margin-bottom: 4rem;
+      }
+
+      .form {
+        label {
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 1rem;
+        }
+
+        input[type='text'],
+        input[type='email'],
+        input[type='submit'],
+        textarea {
+          width: 100%;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+        }
+
+        input[type='text'],
+        input[type='email'] {
+          padding: 0.5rem;
+        }
+
+        input[type='submit'] {
+          border: none;
+          cursor: pointer;
+        }
+
+        textarea {
+          resize: none;
+        }
+
+        &__wrapper {
+          margin-bottom: 2rem;
+
+          label {
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+          }
+
+          input[type='text'],
+          input[type='email'],
+          input[type='submit'],
+          textarea {
+            width: 100%;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+          }
+
+          input[type='text'],
+          input[type='email'] {
+            padding: 0.5rem;
+          }
+
+          textarea {
+            resize: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wpcf7 {
+  p {
+    input[type='submit'] {
+      width: 100%;
+      color: $color-light;
+      background-color: $color-primary;
+      border: none;
+      cursor: pointer;
+      display: block;
+      text-transform: uppercase;
+      font-family: 'poppins-bold';
+      text-align: center;
+      padding: 1rem 0;
+      border-radius: 1rem;
+      font-size: clamp(1.6rem, 5vw, 1.8rem);
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: darken($color-primary, 10);
+      }
+    }
+  }
+}

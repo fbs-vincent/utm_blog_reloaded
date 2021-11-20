@@ -1,0 +1,36 @@
+.current-menu-item {
+  color: $color-primary;
+}
+
+// $sizes: 1, 2, 3, 4, 5;
+
+// @each $size in $sizes {
+//   .mb-#{$size} {
+//     margin-bottom: #{$size}rem;
+//   }
+// }
+
+// @each $size in $sizes {
+//   .mt-#{$size} {
+//     margin-top: #{$size}rem;
+//   }
+// }
+
+// .post-categories {
+//   li a {
+//     pointer-events: none;
+//   }
+// }
+
+.pagination {
+  text-align: center;
+
+  .page-numbers.current {
+    color: $color-primary;
+  }
+
+  .page-numbers {
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+}

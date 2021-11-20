@@ -1,0 +1,18 @@
+.top-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    text-align: center;
+    color: $color-light;
+    font-family: 'poppins-bold';
+    padding: 4rem 0;
+    text-transform: uppercase;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+
+    @include media-query($break-sm) {
+      margin: 0 2rem;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.navigation {
+  border-bottom: 1px solid #707070;
+
+  .menu-top-bar-container {
+    ul {
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+      li {
+        font-family: 'poppins-bold';
+        text-transform: uppercase;
+        transition: color 0.5s ease-in-out;
+        word-break: break-all;
+        display: inline-block;
+
+        a {
+          display: inline-block;
+          font-size: clamp(1.4rem, 5vw, 1.4rem);
+          margin: 2rem 0.8rem;
+
+          // @media only screen and (max-width: 1086px) {
+          //   margin: 2rem 1rem;
+          // }
+          @media only screen and (max-width: 1190px) {
+            margin: unset;
+          }
+        }
+        @media only screen and (max-width: 1190px) {
+          display: block;
+          margin: 2rem 0;
+
+          &:first-child {
+            margin-top: unset;
+          }
+        }
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+      @media only screen and (max-width: 1190px) {
+        max-height: 0;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 1.2rem 0.1rem;
+    span {
+      height: 0.2rem;
+      background-color: $color-primary;
+      display: block;
+      width: 3rem;
+      position: relative;
+
+      &::before {
+        height: inherit;
+        background-color: inherit;
+        width: inherit;
+        content: '';
+        position: absolute;
+        top: -1rem;
+      }
+
+      &::after {
+        height: inherit;
+        background-color: inherit;
+        width: inherit;
+        content: '';
+        position: absolute;
+        top: 1rem;
+      }
+    }
+    @media only screen and (max-width: 1190px) {
+      display: flex;
+
+      span {
+        margin-left: auto;
+      }
+    }
+    // @media only screen and (max-width: 1100px) {
+    //   margin-right: 2rem;
+    // }
+  }
+  @media only screen and (max-width: 1190px) {
+    padding: 1rem 0;
+  }
+}
