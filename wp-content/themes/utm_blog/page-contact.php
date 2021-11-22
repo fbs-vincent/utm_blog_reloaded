@@ -33,12 +33,10 @@
             <div class="blog__contact__form">
               <h3>Send Message</h3>
           
-              <?php echo do_shortcode('[contact-form-7 id="95" title="Contact"]') ?>
+              <?php echo do_shortcode('[contact-form-7 id="72" title="Contact"]') ?>
             </div>
           </div>
-          <div class="blog__sidebar">
-          <?php get_sidebar() ?>
-          </div>
+          <?php require_once( get_template_directory() . '/template/template-sidebar.php'); ?>
         </section>
       </div>
     </div>

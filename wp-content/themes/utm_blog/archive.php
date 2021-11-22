@@ -19,9 +19,20 @@
         
        
           <div class="blog__archive">
-     
+       
             <div class="blog__archive__header">
-         
+            <?php
+           
+            $current_cat = get_the_category();
+            $cat_ID = $current_cat[0]->cat_ID;
+            $catHeader = new WP_Query( array(
+                   
+                     'posts_per_page' => 1,
+                     'cat' => $cat_ID,  
+                  
+                ));
+                ?>
+             <?php if($catHeader->have_posts()) : while($catHeader->have_posts()) : $catHeader->the_post() ?>
               <h2>category post: <span><?php the_category() ?></span></h2>
               <?php if(has_post_thumbnail()) {
                   the_post_thumbnail();
@@ -49,10 +60,14 @@
               <?php echo wp_trim_words(get_the_content(), 20) ?>
               </div>
               <a class="font--bold" href="<?php the_permalink() ?>">View Post</a>
+              <?php endwhile; else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
             </div>
-           
+          
             <div class="blog__archive__posts grid-col-2">
-           
+            
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
               <div class="card__blog__featured">
                 <figure>
                 <?php if(has_post_thumbnail()) {
@@ -76,14 +91,29 @@
                   <a href="<?php the_permalink(); ?>" class="card__link font--bold">View Post</a>
                 </article>
               </div>
+              <?php endwhile; else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
             
+
             </div>
-           
+            <div class="pagination t-center">
+    <?php
+                    $big = 999999999; // need an unlikely integer
+                    echo paginate_links( array(
+                        'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                        'format' => '?paged=%#%',
+                        'prev_text' => __('Prev'),
+                        'next_text' => __('Next '),
+                        'current' => max( 1, get_query_var('paged') ),
+                        // 'total' => wp_query()->max_num_pages
+                        ));
+                   ?>
+            </div>
+
+
           </div>
-     
-             <div class="blog__sidebar">
-          <?php get_sidebar() ?>
-          </div>
+          <?php require_once( get_template_directory() . '/template/template-sidebar.php'); ?>
         </section>
       </div>
     </div>

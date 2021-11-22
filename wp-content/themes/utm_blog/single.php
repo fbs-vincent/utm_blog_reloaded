@@ -34,9 +34,7 @@
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
           </div>
-          <div class="blog__sidebar">
-          <?php get_sidebar() ?>
-          </div>
+          <?php require_once( get_template_directory() . '/template/template-sidebar.php'); ?>
         </section>
       </div>
     </div>

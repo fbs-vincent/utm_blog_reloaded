@@ -47,11 +47,14 @@
               <h3><span>Featured Post</span></h3>
             </div>
             <div class="blog__featured__wrapper grid-col-2">
-            <?php $featuredPost = new WP_Query( array(
+            <?php 
+           
+            $featuredPost = new WP_Query( array(
                      'post_type' => 'post',
                      'posts_per_page' => 4, 
                     //  'meta_key' => 'Featured',
                     //  'meta_value' => 'Post',
+            
                    
                 ));
                 ?>
@@ -87,10 +90,9 @@
               
               
             </div>
+            
           </div>
-          <div class="blog__sidebar">
-                <?php get_sidebar() ?>
-          </div>
+    <?php require_once( get_template_directory() . '/template/template-sidebar.php'); ?>
         
         </section>
       </div>
