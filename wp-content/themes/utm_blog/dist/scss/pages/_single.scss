@@ -39,10 +39,11 @@
     }
     &__content {
       word-break: break-word;
+      padding-right: 5rem;
       img {
         margin: 0 auto;
-        width: 320px;
-        height: 480px;
+        width: 80%;
+        // height: 480px;
         padding: 4rem 0;
         object-fit: cover;
         object-position: center;
@@ -54,6 +55,9 @@
 
       p {
         margin-bottom: 2rem;
+      }
+      @media only screen and (max-width: 1480px) {
+        padding-right: 1.5rem;
       }
     }
   }

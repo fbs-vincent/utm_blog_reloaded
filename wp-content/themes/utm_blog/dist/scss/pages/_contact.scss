@@ -18,20 +18,25 @@
         margin-bottom: 4rem;
       }
 
-      ul li {
-        position: relative;
+      ul {
         text-transform: uppercase;
-        margin-bottom: 1rem;
-        word-break: break-all;
+        word-break: break-word;
+        li {
+          position: relative;
+          margin-bottom: 1rem;
 
-        &::after {
-          content: ':';
-          position: absolute;
-          left: 8rem;
-        }
-        span {
-          position: absolute;
-          left: 11rem;
+          label {
+            display: inline-block;
+            min-width: 6.2rem;
+          }
+
+          span {
+            display: inline-block;
+            line-height: 1.4;
+            &:first-of-type {
+              margin: 0 1rem;
+            }
+          }
         }
       }
     }

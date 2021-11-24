@@ -30,9 +30,21 @@
               <?php the_field('paragraph'); ?>
               </p>
               <ul>
-                <li>address <span><?php the_field('contact_address'); ?></span></li>
-                <li>phone <span><?php the_field('contact_phone'); ?></span></li>
-                <li>email <span><?php the_field('contact_email'); ?></span></li>
+                <li>
+                  <label for="address">address</label>
+                  <span>:</span>
+                  <span name="address"><?php the_field('contact_address'); ?></span>
+                </li>
+                <li>
+                  <label for="phone">phone</label>
+                  <span>:</span>
+                  <span name="phone"><?php the_field('contact_phone'); ?></span>
+                </li>
+                <li>
+                  <label for="email">email</label>
+                  <span>:</span>
+                  <span name="email"><?php the_field('contact_email'); ?></span>
+                </li>
               </ul>
             </div>
             <div class="blog__contact__form">
