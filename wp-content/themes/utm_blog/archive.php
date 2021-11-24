@@ -7,11 +7,20 @@
             <div class="burger-menu">
               <span></span>
             </div>
-            <?php 
-                        wp_nav_menu(array(
-                            'theme_location' => 'primary_menu',
-                        ))
-                    ?>
+            <div class="menu-top-bar-container">
+            <ul>
+                <li><a href="<?php echo site_url('/') ?>">home</a></li>
+                <?php 
+                $categories = get_categories();
+                foreach ($categories as $category) {
+                  $site_url = site_url('category/'.$category->slug.'');
+                  // echo '<li><a href="../category/'.$category->slug.'">'.$category->name.'</a></li>';
+                  echo '<li><a href="'.$site_url.'">'.$category->name.'</a></li>';
+                };
+                ?>
+                <li><a href="<?php echo site_url('/contact') ?>">contact</a></li>
+              </ul>
+            </div>
          
           </nav>
         </header>
@@ -113,7 +122,7 @@
 
 
           </div>
-          <?php require_once( get_template_directory() . '/template/template-sidebar.php'); ?>
+          <?php get_sidebar(); ?>
         </section>
       </div>
     </div>

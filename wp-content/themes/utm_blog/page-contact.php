@@ -6,11 +6,20 @@
             <div class="burger-menu">
               <span></span>
             </div>
-            <?php 
-                        wp_nav_menu(array(
-                            'theme_location' => 'primary_menu',
-                        ))
-                    ?>
+            <div class="menu-top-bar-container">
+              <ul>
+                <li><a href="<?php echo site_url('/') ?>">home</a></li>
+                <?php 
+                $categories = get_categories();
+                foreach ($categories as $category) {
+                  $site_url = site_url('category/'.$category->slug.'');
+                  // echo '<li><a href="../category/'.$category->slug.'">'.$category->name.'</a></li>';
+                  echo '<li><a href="'.$site_url.'">'.$category->name.'</a></li>';
+                };
+                ?>
+                <li><a href="<?php echo site_url('/contact') ?>">contact</a></li>
+              </ul>
+            </div>
           </nav>
         </header>
         <section class="blog grid-col-2 grid-col-2__blog">
@@ -18,16 +27,12 @@
             <div class="blog__contact__details">
               <h2>contact me</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                beatae facilis repellat, ducimus possimus voluptatum et
-                accusantium ullam deserunt quod, eos nesciunt voluptas fugit
-                nulla nisi cum numquam molestiae ipsum quibusdam pariatur,
-                incidunt eligendi excepturi commodi! Sequi atque natus commodi?
+              <?php the_field('paragraph'); ?>
               </p>
               <ul>
-                <li>address <span>akshdhasdlk</span></li>
-                <li>phone <span>(800) 362-9446</span></li>
-                <li>email <span>contact@utm.com</span></li>
+                <li>address <span><?php the_field('contact_address'); ?></span></li>
+                <li>phone <span><?php the_field('contact_phone'); ?></span></li>
+                <li>email <span><?php the_field('contact_email'); ?></span></li>
               </ul>
             </div>
             <div class="blog__contact__form">
@@ -36,7 +41,7 @@
               <?php echo do_shortcode('[contact-form-7 id="72" title="Contact"]') ?>
             </div>
           </div>
-          <?php require_once( get_template_directory() . '/template/template-sidebar.php'); ?>
+          <?php get_sidebar(); ?>
         </section>
       </div>
     </div>
