@@ -55,7 +55,7 @@
                 style="background-image: url('<?php echo get_the_post_thumbnail_url($slide) ?>')"
               >
                 <div class="swiper-slide__wrapper">
-                  <h2><a href="<?php the_permalink($slide) ?>"><?php echo $slide->post_name ?></a></h2>
+                  <h2><a href="<?php the_permalink($slide) ?>"><?php echo $slide->post_title ?></a></h2>
                   <a href="<?php echo site_url('category/'.$cd_slug.'') ?>"><?php echo get_the_category($slide->ID)[0]->name; ?></a>
                  
                 </div>
@@ -105,7 +105,7 @@
                       <?php the_category() ?>
                     
                   
-                    <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+                    <h2><a href="<?php the_permalink() ?>"><?php echo wp_trim_words( get_the_title(), 7 ); ?></a></h2>
                   </div>
 
                   <div class="card__body">

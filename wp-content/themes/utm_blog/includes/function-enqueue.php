@@ -8,6 +8,8 @@ function utmblog_fonts() {
     wp_enqueue_style( 'utmblog_font_light', get_template_directory_uri() . '/fonts/Poppins-Light.woff2' );
     wp_enqueue_style( 'utmblog_font_semibold', get_template_directory_uri() . '/fonts/Poppins-SemiBold.woff2' );
     wp_enqueue_style( 'utmblog_font_extralight', get_template_directory_uri() . '/fonts/Poppins-ExtraLight.woff2' );
+    wp_enqueue_style( 'utmblog_font_italic', get_template_directory_uri() . '/fonts/Poppins-Italic.woff2' );
+    wp_enqueue_style( 'utmblog_font_italicbold', get_template_directory_uri() . '/fonts/Poppins-BoldItalic.woff2' );
 }
 
 add_action('wp_enqueue_scripts', 'utmblog_assets');

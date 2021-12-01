@@ -37,6 +37,18 @@
       crossorigin="anonymous"
     />
     <link
+      rel="preload"
+      as="font"
+      href="../fonts/Poppins-Italic.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="../fonts/Poppins-BoldItalic.woff2"
+      crossorigin="anonymous"
+    />
+    <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
     />
@@ -45,7 +57,7 @@
    
     
   </head>
-  <section class="top-header" style="background: url('http://localhost/utm_blog/wp-content/uploads/2021/11/top-header.jpg')">
+  <section class="top-header" style="background: url('<?php the_field('top_header', 16); ?>')">
       <h1><a href="<?php echo site_url('/') ?>">unleashed the masterpiece</a></h1>
   </section>
   <body class="body">

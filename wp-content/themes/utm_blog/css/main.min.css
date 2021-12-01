@@ -36,6 +36,16 @@
   src: url('../fonts/Poppins-Bold.woff2') format('woff2');
   font-display: swap;
 }
+@font-face {
+  font-family: 'poppins-italic';
+  src: url('../fonts/Poppins-Italic.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'poppins-italicbold';
+  src: url('../fonts/Poppins-BoldItalic.woff2') format('woff2');
+  font-display: swap;
+}
 html,
 body,
 div,
@@ -295,6 +305,7 @@ p {
 .card__blog__featured .card__header h2 {
   font-size: clamp(1.6rem, 5vw, 1.8rem);
   font-family: 'poppins-bold';
+  min-height: 3.6rem;
 }
 .card__blog__featured .card__header h2 a {
   color: #1d1d1d;
@@ -910,6 +921,64 @@ p {
 }
 .blog__single__content p {
   margin-bottom: 2rem;
+}
+.blog__single__content h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.4;
+}
+.blog__single__content h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.4;
+}
+.blog__single__content h3 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 1.4;
+}
+.blog__single__content h4 {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  line-height: 1.4;
+}
+.blog__single__content h5 {
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  line-height: 1.4;
+}
+.blog__single__content h6 {
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  line-height: 1.4;
+}
+.blog__single__content strong {
+  font-family: 'poppins-bold';
+}
+.blog__single__content strong em {
+  font-family: 'poppins-italicbold';
+}
+.blog__single__content em {
+  font-family: 'poppins-italic';
+}
+.blog__single__content ul,
+.blog__single__content ol {
+  margin-bottom: 2rem;
+}
+.blog__single__content ul li,
+.blog__single__content ol li {
+  margin-bottom: 0.5rem;
+}
+.blog__single__content ul {
+  list-style: unset;
+  list-style-position: inside;
+}
+.blog__single__content ol {
+  list-style: decimal;
+  list-style-position: inside;
+}
+.blog__single__content a {
+  text-decoration: underline;
+  color: #5bb1f9;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.blog__single__content a:hover {
+  color: #0881e6;
 }
 @media only screen and (max-width: 1480px) {
   .blog__single__content {

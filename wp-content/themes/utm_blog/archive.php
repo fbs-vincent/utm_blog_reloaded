@@ -90,7 +90,7 @@
                         <?php the_category() ?>
                      
                
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
+                    <h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 7 ); ?></a></h2>
                   </div>
 
                   <div class="card__body">
